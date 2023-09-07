@@ -42,9 +42,6 @@ jobs:
       - name: Build SPA
         run: npm run build
 
-      - name: create stat-milestones page
-        run: cp ./dist/index.html ./dist/panel.html
-
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
