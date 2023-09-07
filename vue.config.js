@@ -36,7 +36,6 @@ module.exports = {
 
   runtimeCompiler: true,
 
-  publicPath: './',
+  publicPath: '/',
   outputDir: 'dist',
-  assetsDir: './static'
 }

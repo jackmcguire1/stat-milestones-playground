@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router"
+import { createRouter, createWebHistory } from "vue-router";
 
 import Panel from "@/components/page-panel/Panel.vue";
 
@@ -7,15 +7,14 @@ const routeInfos = [
     path: "/index.html",
     name: "home",
     component: Panel,
-    props: route => ({
+    props: (route) => ({
       locale: route.query.locale,
     }),
   },
   {
     path: "/",
-    name: "home",
     component: Panel,
-    props: route => ({
+    props: (route) => ({
       locale: route.query.locale,
     }),
   },
@@ -23,15 +22,23 @@ const routeInfos = [
     path: "/panel.html",
     name: "home",
     component: Panel,
-    props: route => ({
+    props: (route) => ({
       locale: route.query.locale,
     }),
   },
-]
+  {
+    path: "/panel",
+    name: "home",
+    component: Panel,
+    props: (route) => ({
+      locale: route.query.locale,
+    }),
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: routeInfos
-})
+  routes: routeInfos,
+});
 
 export default router;
