@@ -41,8 +41,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Quasar Build
-        run: npx quasar build
+      - name: Build SPA
+        run: npm run build
 
       - name: create stat-milestones page
         run: cp ./dist/index.html ./dist/panel.html
