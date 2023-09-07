@@ -1,0 +1,128 @@
+{
+  "allowHttpBackend": true,
+  "backendCommand": "",
+  "backendFolderName": "",
+  "certificateExceptions": [],
+  "extensionViews": [
+    {
+      "channelId": "419651782",
+      "configurationAnchor": "panel",
+      "displayChannelName": "crazyjack12",
+      "features": {
+        "isBitsEnabled": true,
+        "isChatEnabled": false,
+        "isSubscriptionStatusAvailable": false
+      },
+      "frameSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "id": "1",
+      "isPopout": false,
+      "label": "",
+      "linked": true,
+      "linkedUserId": "265737932",
+      "orientation": "Portrait",
+      "type": "config",
+      "viewerType": "Broadcaster"
+    }
+  ],
+  "frontendCommand": "",
+  "frontendFolderName": "",
+  "manifest": {
+    "anchor": "",
+    "assetURLs": [],
+    "authorName": "Jack McGuire",
+    "canInstall": true,
+    "configUrl": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/config.html",
+    "configurationLocation": "hosted",
+    "description": "Have you ever heard of the saying “a dream is just a dream without goals.”? Does this apply to the number of followers you wish you had?\n  \nThis Twitch extension will let you track the progress towards the social goals you want to achieve!\n\nFEATURES:\nPersonalization:\n- Theme customization\n- Personalize a message to your followers\n- Personalize a Message-Of-The-Day\n\nTrack Milestones:\n- Track your Twitch Followers\n- Track your Twitch Subscribers\n- Track your Twitch Creator Goals\n- Track your Twitch Charity Campaigns\n- Track your Twitch Hype Events\n- Track your own custom milestone\n- Track messages published by users\n\nNOTIFICATIONS:\nnote:- notifications displayed within the extension\n\n- New Follower notifications\n- New Subscribers notifications\n- New Hype Train contributions\n- Twitch Goal Progress Updates\n- Notifications from subscribers\n- Notifications when you start broadcasting\n- Pre-defined notifications chosen by users\n",
+    "eulaTosUrl": "https://www.gnu.org/licenses/gpl-3.0.en.html",
+    "hasChatSupport": false,
+    "iconUrl": "https://extensions-discovery-images.twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.4.5/logob8530be8-cf73-465e-88a0-000a24207483",
+    "iconUrls": {
+      "100x100": "https://extensions-discovery-images.twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.4.5/logob8530be8-cf73-465e-88a0-000a24207483",
+      "300x200": "https://extensions-discovery-images.twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/0.0.2/discovery37afbae2-feef-45e3-967e-e11166af7ec2"
+    },
+    "id": "e93cf8730nd11z7gepkly2gry5kv8k",
+    "installationCount": -42,
+    "liveConfigUrl": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/liveconfig.html",
+    "name": "Stat-Milestones",
+    "panelHeight": 500,
+    "privacyPolicyUrl": "",
+    "requestIdentityLink": true,
+    "requiredBroadcasterAbilities": [],
+    "screenshotUrls": [
+      "https://extensions-discovery-images.twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/0.0.2/screenshot64aae321-50be-4b5f-ada6-f4a2e1088211",
+      "https://extensions-discovery-images.twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/0.0.3/screenshotef2691a8-9768-4e53-b781-5ddcf863be70",
+      "https://extensions-discovery-images.twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/0.0.3/screenshot78d8365f-d016-48ea-9186-f4f1a72432a5",
+      "https://extensions-discovery-images.twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/0.0.3/screenshot98ad9180-d755-456a-b055-52464a93dac0",
+      "https://extensions-discovery-images.twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/0.0.3/screenshot8131c692-b7db-41e3-b7c4-10f145359465"
+    ],
+    "sku": "",
+    "state": "In Review",
+    "subscriptionsSupportLevel": "none",
+    "summary": "Track your Twitch Followers, HypeTrain, Creator Goals, Subscribers and Charities on your profile About or Bio!",
+    "supportEmail": "jackmcguire35+support@gmail.com",
+    "vendorCode": "",
+    "version": "1.6.3",
+    "viewerSummary": "Track and Display your Twitch followers, subscribers, Hypetrain and Goals to Viewers.",
+    "viewerUrl": {
+      "viewer_url": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/panel.html",
+      "height": 500,
+      "can_link_external_content": true,
+      "viewerUrl": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/panel.html",
+      "canLinkExternalContent": true
+    },
+    "viewerUrls": {
+      "mobile": "",
+      "panel": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/panel.html",
+      "videoOverlay": "",
+      "component": "",
+      "config": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/config.html",
+      "liveConfig": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/liveconfig.html"
+    },
+    "views": {
+      "mobile": null,
+      "panel": {
+        "viewer_url": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/panel.html",
+        "height": 500,
+        "can_link_external_content": true,
+        "viewerUrl": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/panel.html",
+        "canLinkExternalContent": true
+      },
+      "videoOverlay": null,
+      "component": null,
+      "config": {
+        "viewer_url": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/config.html",
+        "can_link_external_content": true,
+        "viewerUrl": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/config.html",
+        "canLinkExternalContent": true
+      },
+      "liveConfig": {
+        "viewer_url": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/liveconfig.html",
+        "can_link_external_content": true,
+        "viewerUrl": "https://e93cf8730nd11z7gepkly2gry5kv8k.ext-twitch.tv/e93cf8730nd11z7gepkly2gry5kv8k/1.6.3/33958be042c3452c7e8e683f194178ac/liveconfig.html",
+        "canLinkExternalContent": true
+      }
+    },
+    "whitelistedConfigUrls": [
+      "https://id.twitch.tv",
+      " https://as4hklez26.execute-api.us-east-1.amazonaws.com",
+      " https://subs.twitch.tv/",
+      " https://6gywu6gbge.execute-api.us-east-1.amazonaws.com",
+      "  https://0u3uqckeqf.execute-api.us-east-1.amazonaws.com",
+      " https://discord.com/api/guilds/997982082263433288/widget.json",
+      "https://static.hotjar.com",
+      "https://hotjar.com"
+    ],
+    "whitelistedPanelUrls": [
+      "https://subs.twitch.tv",
+      "https://static.hotjar.com",
+      "https://hotjar.com"
+    ]
+  },
+  "name": "Stat-Milestones",
+  "version": 3,
+  "usingRandomFrontendHostingPort": true
+}
