@@ -36,6 +36,6 @@ module.exports = {
 
   runtimeCompiler: true,
 
-  publicPath: '/',
+  publicPath: process.env.NODE_ENV === "production" ? "/stat-milestones-playground/" : "/",
   outputDir: 'dist',
 }
