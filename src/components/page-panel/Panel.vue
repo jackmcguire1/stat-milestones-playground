@@ -33,19 +33,19 @@
             >
               <b-list-group>
                 <b-list-group-item>
-                  <b-input-group size="lg" prepend="Twitch Streamer">
+                  <b-input-group prepend="Twitch Streamer">
                     <b-form-input v-model="channelName"></b-form-input>
                   </b-input-group>
                 </b-list-group-item>
 
                 <b-list-group-item>
-                  <b-input-group size="lg" prepend="Title">
+                  <b-input-group prepend="Title">
                     <b-form-input v-model="title"></b-form-input>
                   </b-input-group>
                 </b-list-group-item>
 
                 <b-list-group-item>
-                  <b-input-group size="lg" prepend="Description">
+                  <b-input-group prepend="Description">
                     <b-form-input v-model="description"></b-form-input>
                   </b-input-group>
                 </b-list-group-item>
