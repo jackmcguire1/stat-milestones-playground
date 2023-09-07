@@ -11,7 +11,7 @@
 This is a playground for the Twitch Extension Stat-Milestones
 <br>
 
-<a href="https://jackmcguire1.github.io/stat-milestones-playground">https://jackmcguire1.github.io/stat-milestones-playgroun</a>
+<a href="https://playground.stat-milestones.dev">https://playground.stat-milestones.dev</a>
 
 ## Prerequisites
 
