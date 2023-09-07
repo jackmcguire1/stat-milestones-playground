@@ -28,7 +28,6 @@
         <b-col>
           <b-container class="text-center" fluid>
             <b-card
-              header="Configuration Options"
               header-tag="header"
               title="Configuration Options"
             >
@@ -52,18 +51,19 @@
                 </b-list-group-item>
 
                 <b-list-group-item>
-                  <b-input-group prepend="Progress" append="100" class="mt-3">
+                  <b-input-group prepend="Progress" :append="count" class="mt-3">
                     <b-form-input
                       v-model="count"
                       type="range"
                       min="0"
                       :max="target"
                     ></b-form-input>
+
                   </b-input-group>
                 </b-list-group-item>
 
                 <b-list-group-item>
-                  <b-input-group prepend="Target" append="100" class="mt-3">
+                  <b-input-group prepend="Target" :append="target" class="mt-3">
                     <b-form-input
                       v-model="target"
                       type="range"
