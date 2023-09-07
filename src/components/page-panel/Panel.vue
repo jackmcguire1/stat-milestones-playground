@@ -154,27 +154,6 @@
             </b-card>
           </b-container></b-col
         >
-        <b-col>
-          <b-container class="text-center" fluid>
-            <b-card title="Twitch Events">
-              <b-list-group>
-                <b-list-group-item>
-                  <b-button
-                    @click="
-                      notification(
-                        'New Follower',
-                        'crazyjack12 is now following!',
-                        0,
-                        true
-                      )
-                    "
-                    >New Follower</b-button
-                  >
-                </b-list-group-item>
-              </b-list-group>
-            </b-card>
-          </b-container>
-        </b-col>
       </b-row>
     </b-container>
   </div>
