@@ -15,7 +15,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@types/bootstrap": "^5.2.6",
     "@vue/babel-preset-app": "^5.0.8",
-    "@vue/compat": "^3.3.4",
+    "@vue/compat": "^3.3.10",
     "@vue/compiler-sfc": "^3.3.4",
     "bootstrap": "^4.6.2",
     "bootstrap-icons": "^1.10.5",
