@@ -108,84 +108,84 @@
                     </b-input-group-append>
                   </b-input-group>
                 </b-list-group-item>
+
+                <b-list-group-item>
+                  <b-input-group prepend="Display follower button">
+                    <b-input-group-append style="margin-left: 100px">
+                      <b-form-radio-group
+                        v-model="displayFollowButton"
+                        button-variant="outline-success"
+                        size="sm"
+                        buttons
+                      >
+                        <b-form-radio
+                          v-for="option in radioOpts"
+                          v-bind:key="option.text"
+                          v-bind:button-variant="option.buttonVariant"
+                          v-bind:value="option.value"
+                        >
+                          {{ option.text }}
+                        </b-form-radio>
+                      </b-form-radio-group>
+                    </b-input-group-append>
+                  </b-input-group>
+                </b-list-group-item>
+
+                <b-list-group-item>
+                  <b-input-group prepend="Display Subscriber button">
+                    <b-input-group-append style="margin-left: 100px">
+                      <b-form-radio-group
+                        v-model="displaySubButton"
+                        button-variant="outline-success"
+                        size="sm"
+                        buttons
+                      >
+                        <b-form-radio
+                          v-for="option in radioOpts"
+                          v-bind:key="option.text"
+                          v-bind:button-variant="option.buttonVariant"
+                          v-bind:value="option.value"
+                        >
+                          {{ option.text }}
+                        </b-form-radio>
+                      </b-form-radio-group>
+                    </b-input-group-append>
+                  </b-input-group>
+                </b-list-group-item>
+
+                <b-list-group-item>
+                  <b-input-group prepend="Alerts">
+                    <b-input-group-append style="margin-left: 10px">
+                      <b-button
+                        @click="
+                          notification(
+                            'New Follower!',
+                            'crazyjack12 has followed example_user',
+                            10000,
+                            true
+                          )
+                        "
+                        variant="success"
+                        >New Follower</b-button
+                      >
+                    </b-input-group-append>
+                    <b-input-group-append style="margin-left: 10px">
+                      <b-button
+                        @click="
+                          notification(
+                            'New Subscriber!',
+                            'crazyjack12 has subscribed to example_user',
+                            10000,
+                            true
+                          )
+                        "
+                        variant="success"
+                        >New Subscriber!</b-button
+                      >
+                    </b-input-group-append>
+                  </b-input-group>
+                </b-list-group-item>
               </b-list-group>
-
-              <b-list-group-item>
-                <b-input-group prepend="Display follower button">
-                  <b-input-group-append style="margin-left: 100px">
-                    <b-form-radio-group
-                      v-model="displayFollowButton"
-                      button-variant="outline-success"
-                      size="sm"
-                      buttons
-                    >
-                      <b-form-radio
-                        v-for="option in radioOpts"
-                        v-bind:key="option.text"
-                        v-bind:button-variant="option.buttonVariant"
-                        v-bind:value="option.value"
-                      >
-                        {{ option.text }}
-                      </b-form-radio>
-                    </b-form-radio-group>
-                  </b-input-group-append>
-                </b-input-group>
-              </b-list-group-item>
-
-              <b-list-group-item>
-                <b-input-group prepend="Display Subscriber button">
-                  <b-input-group-append style="margin-left: 100px">
-                    <b-form-radio-group
-                      v-model="displaySubButton"
-                      button-variant="outline-success"
-                      size="sm"
-                      buttons
-                    >
-                      <b-form-radio
-                        v-for="option in radioOpts"
-                        v-bind:key="option.text"
-                        v-bind:button-variant="option.buttonVariant"
-                        v-bind:value="option.value"
-                      >
-                        {{ option.text }}
-                      </b-form-radio>
-                    </b-form-radio-group>
-                  </b-input-group-append>
-                </b-input-group>
-              </b-list-group-item>
-
-              <b-list-group-item>
-                <b-input-group prepend="Alerts">
-                  <b-input-group-append style="margin-left: 10px">
-                    <b-button
-                      @click="
-                        notification(
-                          'New Follower!',
-                          'crazyjack12 has followed example_user',
-                          10000,
-                          true
-                        )
-                      "
-                      variant="success"
-                      >New Follower</b-button
-                    >
-                  </b-input-group-append>
-                  <b-input-group-append style="margin-left: 10px">
-                    <b-button
-                      @click="
-                        notification(
-                          'New Subscriber!',
-                          'crazyjack12 has subscribed to example_user',
-                          10000,
-                          true
-                        )
-                      "
-                      variant="success"
-                      >New Subscriber!</b-button
-                    >
-                  </b-input-group-append>
-                </b-input-group>
-              </b-list-group-item>
             </b-card>
           </b-container></b-col
         >
