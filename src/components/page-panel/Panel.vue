@@ -195,6 +195,7 @@ export default {
       title: "Followers",
       description: "❤️ Thank you for following! ❤️",
       count: 50,
+      target: 100,
       gauge_colour: "#26a59a",
       displaySubButton: true,
       displayFollowButton: true,
