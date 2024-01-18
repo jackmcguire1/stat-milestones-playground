@@ -1,7 +1,7 @@
 <template>
   <div id="custommetric">
     <b-card class="text-center">
-      <span class="card-header text-center">
+      <span class="text-center">
         <strong>{{ title }}</strong>
       </span>
       <div v-if="count < target">
@@ -72,12 +72,11 @@
         <b-list-group-item>
           <div :style="style">
             <b-card
-              header-bg-variant="dark"
-              header-text-variant="white"
               align="center"
               id="customMetricCard"
+              class=""
             >
-              <template class="mb-0" #header> Message To Followers: </template>
+              <template #header> Message To Followers: </template>
               <b-card-text>{{ description }}</b-card-text>
             </b-card>
           </div>
@@ -148,14 +147,9 @@ export default {
   color: v-bind(buttonTextColour);
 }
 
-.card .card-header {
-  border-color: v-bind(buttonBkgColour);
-  color: v-bind(buttonTxtColour);
-}
-
 .card .card-body {
   background-color: v-bind(buttonBkgColour);
-  color: v-bind(appFontColour);
+  color: v-bind(buttonTxtColour);
 }
 
 .card {
@@ -167,6 +161,11 @@ export default {
   background-color: v-bind(buttonBkgColour);
   color: v-bind(buttonTxtColour);
 }
+
+.card .card-body, .card .card-header, .list-group .list-group-item {
+ background-color: unset;
+}
+
 
 .slide-fade-enter-active {
   transition: all 0.3s ease;
@@ -180,10 +179,24 @@ export default {
   transform: translateX(10px);
   opacity: 0;
 }
+
+.card .card-body, .card .card-header, .list-group .list-group-item {
+ background-color: none;
+}
 </style>
 
 <style>
 .popover {
   max-width: none;
 }
+
+.card-header {
+  background-color: v-bind(buttonBkgColour);
+  color: v-bind(buttonTxtColour);
+}
+
+.card .card-body, .card .card-header, .list-group .list-group-item {
+ background-color: unset;
+}
+
 </style>

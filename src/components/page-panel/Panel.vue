@@ -2,7 +2,7 @@
   <div id="panel" :style="style">
     <div class="custom">
       <b-navbar toggleable="lg">
-        <b-navbar-brand>
+        <b-navbar-brand :style="{ color: appFontColour }">
           <font-awesome-icon icon="chart-bar" /> | Stat-Milestones-Playground
         </b-navbar-brand>
       </b-navbar>
@@ -27,10 +27,7 @@
         ></b-col>
         <b-col>
           <b-container class="text-center" fluid>
-            <b-card
-              header-tag="header"
-              title="Configuration Options"
-            >
+            <b-card header-tag="header" title="Configuration Options">
               <b-list-group>
                 <b-list-group-item>
                   <b-input-group prepend="Twitch Streamer">
@@ -51,14 +48,17 @@
                 </b-list-group-item>
 
                 <b-list-group-item>
-                  <b-input-group prepend="Progress" :append="count" class="mt-3">
+                  <b-input-group
+                    prepend="Progress"
+                    :append="count"
+                    class="mt-3"
+                  >
                     <b-form-input
                       v-model="count"
                       type="range"
                       min="0"
                       :max="target"
                     ></b-form-input>
-
                   </b-input-group>
                 </b-list-group-item>
 
@@ -121,6 +121,7 @@
                     >
                       <b-form-radio
                         v-for="option in radioOpts"
+                        v-bind:key="option.text"
                         v-bind:button-variant="option.buttonVariant"
                         v-bind:value="option.value"
                       >
@@ -142,12 +143,32 @@
                     >
                       <b-form-radio
                         v-for="option in radioOpts"
+                        v-bind:key="option.text"
                         v-bind:button-variant="option.buttonVariant"
                         v-bind:value="option.value"
                       >
                         {{ option.text }}
                       </b-form-radio>
                     </b-form-radio-group>
+                  </b-input-group-append>
+                </b-input-group>
+              </b-list-group-item>
+
+              <b-list-group-item>
+                <b-input-group prepend="Display Subscriber button">
+                  <b-input-group-append style="margin-left: 100px">
+                    <b-button
+                      @click="
+                        notification(
+                          'New Follower Alert',
+                          'crazyjack12 has followed example_user',
+                          10000,
+                          true
+                        )
+                      "
+                      variant="success"
+                      >New Follower</b-button
+                    >
                   </b-input-group-append>
                 </b-input-group>
               </b-list-group-item>
@@ -193,9 +214,10 @@ export default {
     notification: function (title, message, delay, append) {
       this.$bvToast.toast(message, {
         title: title,
-        toaster: "b-toaster-top-center",
-        autoHideDelay: delay,
+        toaster: "b-toaster-top-full",
+        solid: true,
         appendToast: append,
+        noAutoHide: true,
       });
     },
   },
@@ -320,6 +342,7 @@ div {
   background-color: v-bind(appBkgColour);
   color: v-bind(appFontColour);
 }
+
 /* 
 #configuration-opts {
   padding-top: 30px;
