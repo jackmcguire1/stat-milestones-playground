@@ -162,10 +162,6 @@ export default {
   color: v-bind(buttonTxtColour);
 }
 
-.card .card-body, .card .card-header, .list-group .list-group-item {
- background-color: unset;
-}
-
 
 .slide-fade-enter-active {
   transition: all 0.3s ease;
@@ -191,6 +187,7 @@ export default {
 }
 
 .card-header {
+  color: v-bind(buttonTxtColour);
   background-color: v-bind(buttonBkgColour);
   color: v-bind(buttonTxtColour);
 }

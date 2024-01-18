@@ -28,7 +28,7 @@
         <b-col>
           <b-container class="text-center" fluid>
             <b-card header-tag="header" title="Configuration Options">
-              <b-list-group>
+              <b-list-group flush>
                 <b-list-group-item>
                   <b-input-group prepend="Twitch Streamer">
                     <b-form-input v-model="channelName"></b-form-input>
@@ -58,17 +58,6 @@
                       type="range"
                       min="0"
                       :max="target"
-                    ></b-form-input>
-                  </b-input-group>
-                </b-list-group-item>
-
-                <b-list-group-item>
-                  <b-input-group prepend="Target" :append="target" class="mt-3">
-                    <b-form-input
-                      v-model="target"
-                      type="range"
-                      :min="count"
-                      max="100"
                     ></b-form-input>
                   </b-input-group>
                 </b-list-group-item>
@@ -205,7 +194,6 @@ export default {
     return {
       title: "Followers",
       description: "❤️ Thank you for following! ❤️",
-      target: 100,
       count: 50,
       gauge_colour: "#26a59a",
       displaySubButton: true,
