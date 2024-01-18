@@ -155,12 +155,12 @@
               </b-list-group-item>
 
               <b-list-group-item>
-                <b-input-group prepend="Display Subscriber button">
-                  <b-input-group-append style="margin-left: 100px">
+                <b-input-group prepend="Alerts">
+                  <b-input-group-append style="margin-left: 10px">
                     <b-button
                       @click="
                         notification(
-                          'New Follower Alert',
+                          'New Follower!',
                           'crazyjack12 has followed example_user',
                           10000,
                           true
@@ -168,6 +168,20 @@
                       "
                       variant="success"
                       >New Follower</b-button
+                    >
+                  </b-input-group-append>
+                  <b-input-group-append style="margin-left: 10px">
+                    <b-button
+                      @click="
+                        notification(
+                          'New Subscriber!',
+                          'crazyjack12 has subscribed to example_user',
+                          10000,
+                          true
+                        )
+                      "
+                      variant="success"
+                      >New Subscriber!</b-button
                     >
                   </b-input-group-append>
                 </b-input-group>
