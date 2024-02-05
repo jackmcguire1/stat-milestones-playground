@@ -12,7 +12,7 @@
     "@braks/revue-draggable": "^0.4.3",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/vue-fontawesome": "^3.0.5",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "@types/bootstrap": "^5.2.10",
     "@vue/babel-preset-app": "^5.0.8",
     "@vue/compat": "3.4.15",
