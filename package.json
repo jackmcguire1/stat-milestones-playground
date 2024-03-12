@@ -43,7 +43,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.21.1",
     "node-sass": "^9.0.0",
-    "postcss": "^8.4.33",
+    "postcss": "^8.4.35",
     "postcss-loader": "^8.1.0",
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",
