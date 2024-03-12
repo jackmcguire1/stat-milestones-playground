@@ -45,7 +45,7 @@
     "node-sass": "^9.0.0",
     "postcss": "^8.4.35",
     "postcss-loader": "^8.1.0",
-    "sass": "^1.70.0",
+    "sass": "^1.71.1",
     "sass-loader": "^14.1.0",
     "vue-cli-plugin-build-zip": "0.0.3"
   },
