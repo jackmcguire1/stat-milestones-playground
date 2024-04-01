@@ -9,7 +9,7 @@
     "zip": "vue-cli-service zip:build"
   },
   "dependencies": {
-    "@braks/revue-draggable": "^0.4.3",
+    "@braks/revue-draggable": "^0.5.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.6",
