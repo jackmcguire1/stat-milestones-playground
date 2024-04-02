@@ -103,7 +103,7 @@
 
                 <b-list-group-item>
                   <b-input-group prepend="Display follower button">
-                    <b-input-group-append style="margin-left: 100px">
+                    <b-input-group-append style="margin-left: 10px">
                       <b-form-radio-group
                         v-model="displayFollowButton"
                         button-variant="outline-success"
@@ -125,7 +125,7 @@
 
                 <b-list-group-item>
                   <b-input-group prepend="Display Subscriber button">
-                    <b-input-group-append style="margin-left: 100px">
+                    <b-input-group-append style="margin-left: 10px">
                       <b-form-radio-group
                         v-model="displaySubButton"
                         button-variant="outline-success"
