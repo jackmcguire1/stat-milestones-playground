@@ -2,7 +2,7 @@
   <div id="custommetric">
     <b-card class="text-center">
       <span class="text-center">
-        <strong>{{ title }}</strong>
+        <h3 style="color: black">{{ title }}</h3>
       </span>
       <div v-if="count < target">
         <br />
@@ -19,11 +19,12 @@
         <b-list-group flush>
           <b-list-group-item>Achievement Complete!</b-list-group-item>
           <b-list-group-item
-            ><strong>Target:</strong> {{ target.toLocaleString() }}
+            ><strong style="color: black">Target:</strong>
+            <div style="color: black">{{ target.toLocaleString() }}</div>
           </b-list-group-item>
           <b-list-group-item
-            ><strong>Current:</strong>
-            {{ count.toLocaleString() }}
+            ><strong style="color: black">Current:</strong>
+            <div style="color: black">{{ count.toLocaleString() }}</div>
           </b-list-group-item>
         </b-list-group>
       </div>
@@ -54,7 +55,7 @@
 
       <b-list-group-item>
         <b-container class="text-center">
-          <strong>Featured Follower:</strong>
+          <strong style="color: black">Featured Follower:</strong>
         </b-container>
         <b-container class="text-center">
           <b-avatar
@@ -64,20 +65,22 @@
             size="3.5em"
           >
           </b-avatar>
-          <span class="mr-auto"><strong>crazyjack12</strong></span>
+          <span style="color: black" class="mr-auto"
+            ><strong>crazyjack12</strong></span
+          >
         </b-container>
       </b-list-group-item>
 
       <b-list-group flush>
         <b-list-group-item>
           <div :style="style">
-            <b-card
-              align="center"
-              id="customMetricCard"
-              class=""
-            >
-              <template #header> Message To Followers: </template>
-              <b-card-text>{{ description }}</b-card-text>
+            <b-card align="center" id="customMetricCard" class="">
+              <template #header>
+                <span style="color: black">
+                  Message To Followers:
+                </span></template
+              >
+              <b-card-text style="color: black">{{ description }}</b-card-text>
             </b-card>
           </div>
         </b-list-group-item>
@@ -159,9 +162,7 @@ export default {
 
 .card-header {
   background-color: v-bind(buttonBkgColour);
-  color: v-bind(buttonTxtColour);
 }
-
 
 .slide-fade-enter-active {
   transition: all 0.3s ease;
@@ -176,8 +177,10 @@ export default {
   opacity: 0;
 }
 
-.card .card-body, .card .card-header, .list-group .list-group-item {
- background-color: none;
+.card .card-body,
+.card .card-header,
+.list-group .list-group-item {
+  background-color: none;
 }
 </style>
 
@@ -192,8 +195,9 @@ export default {
   color: v-bind(buttonTxtColour);
 }
 
-.card .card-body, .card .card-header, .list-group .list-group-item {
- background-color: unset;
+.card .card-body,
+.card .card-header,
+.list-group .list-group-item {
+  background-color: unset;
 }
-
 </style>

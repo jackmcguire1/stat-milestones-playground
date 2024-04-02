@@ -1,32 +1,31 @@
 <template>
   <div id="gauge">
     <div class="image-detail">
-      <canvas
-        :id="this._uid"
-        class="image-detail-canvas"
-      ></canvas>
+      <canvas :id="this._uid" class="image-detail-canvas"></canvas>
     </div>
     <div id="inner">
-      <span>{{ title }}: </span>
-      <span :id="this.gaugeValueID"></span>
-      /
-      <span :id="this.targetEL">{{ target.toLocaleString() }}</span>
+      <span style="color: black">{{ title }}: </span>
+      <span style="color: black" :id="this.gaugeValueID"></span>
+      <span style="color: black">/</span>
+      <span style="color: black" :id="this.targetEL">{{
+        target.toLocaleString()
+      }}</span>
     </div>
   </div>
 </template>
 
 <script>
-import *  as gaugeJS from 'gaugeJS';
+import * as gaugeJS from "gaugeJS";
 
 export default {
-  name: 'gauge',
-  data () {
+  name: "gauge",
+  data() {
     return {
       gauge: null,
       label: null,
-      gaugeValueID: 'gval' + this._uid,
-      targetEL: 'gval' + this._uid
-    }
+      gaugeValueID: "gval" + this._uid,
+      targetEL: "gval" + this._uid,
+    };
   },
   props: {
     colour: String,
@@ -34,17 +33,17 @@ export default {
     current: Number,
     target: Number,
   },
-  mounted () {
-    this.initGauge(this.current, this.colour)
+  mounted() {
+    this.initGauge(this.current, this.colour);
   },
   methods: {
     initGauge: function (current, colour) {
-      var opts = this.getOpts(colour)
+      var opts = this.getOpts(colour);
 
       var el = document.getElementById(this._uid); // your canvas element
       this.gauge = new gaugeJS.Donut(el).setOptions(opts); // create sexy gauge!
       this.gauge.maxValue = this.target; // set max gauge value
-      this.gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+      this.gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
       this.gauge.animationSpeed = 32; // set animation speed (32 is default value)
       this.gauge.set(0); // set actual value
       el.title = this.title + ": " + this.gauge.value;
@@ -56,21 +55,21 @@ export default {
         angle: 0.35, // The span of the gauge arc
         lineWidth: 0.1, // The line thickness
         radiusScale: 1, // Relative radius
-        limitMax: false,     // If false, max value increases automatically if value > maxValue
-        limitMin: false,     // If true, the min value of the gauge will be fixed
-        colorStart: colour,   // Colors
-        colorStop: colour,    // just experiment with them
-        strokeColor: '#EEEEEE',  // to see which ones work best for you
+        limitMax: false, // If false, max value increases automatically if value > maxValue
+        limitMin: false, // If true, the min value of the gauge will be fixed
+        colorStart: colour, // Colors
+        colorStop: colour, // just experiment with them
+        strokeColor: "#EEEEEE", // to see which ones work best for you
         generateGradient: true,
-        highDpiSupport: true,     // High resolution support
+        highDpiSupport: true, // High resolution support
         staticLabels: {
-          font: "30px sans-serif",  // Specifies font
-          labels: [1250, 130, 150, 220.1, 260, 300],  // Print labels at these values
-          color: "#000000",  // Optional: Label text color
-          fractionDigits: 0  // Optional: Numerical precision. 0=round off.
-        }
-      }
-    }
+          font: "30px sans-serif", // Specifies font
+          labels: [1250, 130, 150, 220.1, 260, 300], // Print labels at these values
+          color: "#000000", // Optional: Label text color
+          fractionDigits: 0, // Optional: Numerical precision. 0=round off.
+        },
+      };
+    },
   },
   watch: {
     current: function (current) {
@@ -84,10 +83,10 @@ export default {
       this.gauge.maxValue = target;
     },
     colour: function (colour) {
-      this.initGauge(this.current, colour)
-    }
-  }
-}
+      this.initGauge(this.current, colour);
+    },
+  },
+};
 </script>
 
 <style>

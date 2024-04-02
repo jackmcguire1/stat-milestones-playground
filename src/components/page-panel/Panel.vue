@@ -27,22 +27,25 @@
         ></b-col>
         <b-col>
           <b-container class="text-center" fluid>
-            <b-card header-tag="header" title="Configuration Options">
+            <b-card header-tag="header" style="color: black">
+              <template #header>
+                <h1 style="color: black">Configuration Options:</h1></template
+              >
               <b-list-group flush>
                 <b-list-group-item>
-                  <b-input-group prepend="Twitch Streamer">
+                  <b-input-group prepend="Twitch Username">
                     <b-form-input v-model="channelName"></b-form-input>
                   </b-input-group>
                 </b-list-group-item>
 
                 <b-list-group-item>
-                  <b-input-group prepend="Title">
+                  <b-input-group prepend="Metric Title">
                     <b-form-input v-model="title"></b-form-input>
                   </b-input-group>
                 </b-list-group-item>
 
                 <b-list-group-item>
-                  <b-input-group prepend="Description">
+                  <b-input-group prepend="Metric Description">
                     <b-form-input v-model="description"></b-form-input>
                   </b-input-group>
                 </b-list-group-item>
@@ -63,7 +66,7 @@
                 </b-list-group-item>
 
                 <b-list-group-item>
-                  <b-input-group prepend="Gauge Colour">
+                  <b-input-group prepend="Metric Gauge Colour">
                     <b-input-group-append id="colourPos">
                       <color-picker
                         format="hex"
@@ -184,7 +187,7 @@
 </template>
 
 <script>
-import CustomMetric from "@/components/page-panel/CustomMetric";
+import CustomMetric from "@/components/utils/CustomMetric.vue";
 import { ColorPicker } from "vue3-colorpicker";
 import "vue3-colorpicker/style.css";
 
@@ -221,6 +224,7 @@ export default {
         solid: true,
         appendToast: append,
         noAutoHide: true,
+        autoHideDelay: 15000,
       });
     },
   },
