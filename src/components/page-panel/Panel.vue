@@ -1,16 +1,16 @@
 <template>
   <div id="panel" :style="style">
     <div class="custom">
-      <b-navbar toggleable="lg">
-        <b-navbar-brand :style="{ color: appFontColour }">
+      <BNavbar toggleable="lg">
+        <BNavbarBrand :style="{ color: appFontColour }">
           <font-awesome-icon icon="chart-bar" /> | Stat-Milestones-Playground
-        </b-navbar-brand>
-      </b-navbar>
+        </BNavbarBrand>
+      </BNavbar>
     </div>
 
-    <b-container class="bv-example-row" fluid>
-      <b-row>
-        <b-col>
+    <BContainer class="bv-example-row" fluid>
+      <BRow>
+        <BCol>
           <div>
             <CustomMetric
               :title="title"
@@ -24,131 +24,129 @@
               :buttonBkgColour="backgroundColour"
               :channelName="channelName"
             /></div
-        ></b-col>
-        <b-col>
-          <b-container class="text-center" fluid>
-            <b-card header-tag="header" style="color: black">
+        ></BCol>
+        <BCol>
+          <BContainer class="text-center" fluid>
+            <BCard header-tag="header" style="color: black">
               <template #header>
                 <h1 style="color: black">Configuration Options:</h1></template
               >
-              <b-list-group flush>
-                <b-list-group-item>
-                  <b-input-group prepend="Twitch Username">
-                    <b-form-input v-model="channelName"></b-form-input>
-                  </b-input-group>
-                </b-list-group-item>
+              <BListGroup flush>
+                <BListGroupItem>
+                  <BInputGroup prepend="Twitch Username">
+                    <BFormInput v-model="channelName"></BFormInput>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group prepend="Metric Title">
-                    <b-form-input v-model="title"></b-form-input>
-                  </b-input-group>
-                </b-list-group-item>
+                <BListGroupItem>
+                  <BInputGroup prepend="Metric Title">
+                    <BFormInput v-model="title"></BFormInput>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group prepend="Metric Description">
-                    <b-form-input v-model="description"></b-form-input>
-                  </b-input-group>
-                </b-list-group-item>
+                <BListGroupItem>
+                  <BInputGroup prepend="Metric Description">
+                    <BFormInput v-model="description"></BFormInput>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group
+                <BListGroupItem>
+                  <BInputGroup
                     prepend="Progress"
                     :append="count"
                     class="mt-3"
                   >
-                    <b-form-input
+                    <BFormInput
                       v-model="count"
                       type="range"
                       min="0"
                       :max="target"
-                    ></b-form-input>
-                  </b-input-group>
-                </b-list-group-item>
+                    ></BFormInput>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group prepend="Metric Gauge Colour">
-                    <b-input-group-append id="colourPos">
+                <BListGroupItem>
+                  <BInputGroup prepend="Metric Gauge Colour">
+                    <BInputGroupAppend id="colourPos">
                       <color-picker
                         format="hex"
                         shape="square"
                         v-model:pureColor="gauge_colour"
                       />
-                    </b-input-group-append>
-                  </b-input-group>
-                </b-list-group-item>
+                    </BInputGroupAppend>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group prepend="Background Colour">
-                    <b-input-group-append id="colourPos">
+                <BListGroupItem>
+                  <BInputGroup prepend="Background Colour">
+                    <BInputGroupAppend id="colourPos">
                       <color-picker
                         format="hex"
                         shape="square"
                         v-model:pureColor="backgroundColour"
                       />
-                    </b-input-group-append>
-                  </b-input-group>
-                </b-list-group-item>
+                    </BInputGroupAppend>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group prepend="Font Colour">
-                    <b-input-group-append id="colourPos">
+                <BListGroupItem>
+                  <BInputGroup prepend="Font Colour">
+                    <BInputGroupAppend id="colourPos">
                       <color-picker
                         format="hex"
                         shape="square"
                         v-model:pureColor="appFontColour"
                       />
-                    </b-input-group-append>
-                  </b-input-group>
-                </b-list-group-item>
+                    </BInputGroupAppend>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group prepend="Display follower button">
-                    <b-input-group-append style="margin-left: 10px">
-                      <b-form-radio-group
+                <BListGroupItem>
+                  <BInputGroup prepend="Display follower button">
+                    <BInputGroupAppend style="margin-left: 10px">
+                      <BFormRadioGroup
                         v-model="displayFollowButton"
-                        button-variant="outline-success"
                         size="sm"
-                        buttons
                       >
-                        <b-form-radio
+                        <BFormRadio
                           v-for="option in radioOpts"
                           v-bind:key="option.text"
                           v-bind:button-variant="option.buttonVariant"
                           v-bind:value="option.value"
                         >
                           {{ option.text }}
-                        </b-form-radio>
-                      </b-form-radio-group>
-                    </b-input-group-append>
-                  </b-input-group>
-                </b-list-group-item>
+                        </BFormRadio>
+                      </BFormRadioGroup>
+                    </BInputGroupAppend>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group prepend="Display Subscriber button">
-                    <b-input-group-append style="margin-left: 10px">
-                      <b-form-radio-group
+                <BListGroupItem>
+                  <BInputGroup prepend="Display Subscriber button">
+                    <BInputGroupAppend style="margin-left: 10px">
+                      <BFormRadioGroup
                         v-model="displaySubButton"
                         button-variant="outline-success"
                         size="sm"
                         buttons
                       >
-                        <b-form-radio
+                        <BFormRadio
                           v-for="option in radioOpts"
                           v-bind:key="option.text"
                           v-bind:button-variant="option.buttonVariant"
                           v-bind:value="option.value"
                         >
                           {{ option.text }}
-                        </b-form-radio>
-                      </b-form-radio-group>
-                    </b-input-group-append>
-                  </b-input-group>
-                </b-list-group-item>
+                        </BFormRadio>
+                      </BFormRadioGroup>
+                    </BInputGroupAppend>
+                  </BInputGroup>
+                </BListGroupItem>
 
-                <b-list-group-item>
-                  <b-input-group prepend="Alerts">
-                    <b-input-group-append style="margin-left: 10px">
-                      <b-button
+                <BListGroupItem>
+                  <BInputGroup prepend="Alerts">
+                    <BInputGroupAppend style="margin-left: 10px">
+                      <BButton
                         @click="
                           notification(
                             'New Follower!',
@@ -158,11 +156,11 @@
                           )
                         "
                         variant="success"
-                        >New Follower</b-button
+                        >New Follower</BButton
                       >
-                    </b-input-group-append>
-                    <b-input-group-append style="margin-left: 10px">
-                      <b-button
+                    </BInputGroupAppend>
+                    <BInputGroupAppend style="margin-left: 10px">
+                      <BButton
                         @click="
                           notification(
                             'New Subscriber!',
@@ -172,17 +170,17 @@
                           )
                         "
                         variant="success"
-                        >New Subscriber!</b-button
+                        >New Subscriber!</BButton
                       >
-                    </b-input-group-append>
-                  </b-input-group>
-                </b-list-group-item>
-              </b-list-group>
-            </b-card>
-          </b-container></b-col
+                    </BInputGroupAppend>
+                  </BInputGroup>
+                </BListGroupItem>
+              </BListGroup>
+            </BCard>
+          </BContainer></BCol
         >
-      </b-row>
-    </b-container>
+      </BRow>
+    </BContainer>
   </div>
 </template>
 
@@ -218,14 +216,7 @@ export default {
   },
   methods: {
     notification: function (title, message, delay, append) {
-      this.$bvToast.toast(message, {
-        title: title,
-        toaster: "b-toaster-top-full",
-        solid: true,
-        appendToast: append,
-        noAutoHide: true,
-        autoHideDelay: 15000,
-      });
+      
     },
   },
   computed: {
