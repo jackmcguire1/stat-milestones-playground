@@ -11,6 +11,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  optimizeDeps: {
+    force: true,
+    esbuildOptions: {
+      loader: {
+        ".js": "jsx",
+      },
+    },
+  },
   server: {
     port: 8082,
   },

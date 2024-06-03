@@ -2,8 +2,6 @@ module.exports = {
   productionSourceMap: false,
 
   chainWebpack: (config) => {
-    config.resolve.alias.set("vue", "@vue/compat");
-
     config.module
       .rule("vue")
       .use("vue-loader")
@@ -11,7 +9,9 @@ module.exports = {
         return {
           ...options,
           compilerOptions: {
-            compatConfig: { COMPONENT_V_MODEL: false },
+            compatConfig: {
+              MODE: false,
+            },
           },
         };
       });

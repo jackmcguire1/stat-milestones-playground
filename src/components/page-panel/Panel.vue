@@ -1,5 +1,6 @@
 <template>
   <div id="panel" :style="style">
+        <BToastOrchestrator />
     <div class="custom">
       <BNavbar toggleable="lg">
         <BNavbarBrand :style="{ color: appFontColour }">
@@ -51,17 +52,17 @@
                 </BListGroupItem>
 
                 <BListGroupItem>
-                  <BInputGroup
-                    prepend="Progress"
-                    :append="count"
-                    class="mt-3"
-                  >
-                    <BFormInput
-                      v-model="count"
-                      type="range"
-                      min="0"
-                      :max="target"
-                    ></BFormInput>
+                  <BInputGroup prepend="Progress" :append="count" class="mt-3">
+                    <BCol sm="1"></BCol>
+                    <BCol alignSelf="center" lg="4">
+                      <BFormInput
+                        v-model="count"
+                        type="range"
+                        min="0"
+                        :max="target"
+                      ></BFormInput>
+                    </BCol>
+                    <BCol lg="1"></BCol>
                   </BInputGroup>
                 </BListGroupItem>
 
@@ -107,6 +108,7 @@
                       <BFormRadioGroup
                         v-model="displayFollowButton"
                         size="sm"
+                        buttons
                       >
                         <BFormRadio
                           v-for="option in radioOpts"
@@ -215,9 +217,7 @@ export default {
     locale: String,
   },
   methods: {
-    notification: function (title, message, delay, append) {
-      
-    },
+    notification: function (title, message, delay, append) {},
   },
   computed: {
     style() {
