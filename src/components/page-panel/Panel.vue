@@ -1,6 +1,6 @@
 <template>
   <div id="panel" :style="style">
-        <BToastOrchestrator />
+    <BToastOrchestrator />
     <div class="custom">
       <BNavbar toggleable="lg">
         <BNavbarBrand :style="{ color: appFontColour }">

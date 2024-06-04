@@ -15,7 +15,9 @@
       </div>
       <div v-else>
         <br />
-        <BImg :src="image" height="250" width="500"></BImg>
+        <BContainer>
+        <BImg :src="image" width="340.12" height="150"></BImg>
+        </BContainer>
         <BListGroup flush>
           <BListGroupItem>Achievement Complete!</BListGroupItem>
           <BListGroupItem
