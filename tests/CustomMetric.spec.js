@@ -45,7 +45,7 @@ describe("CustomMetric.vue", () => {
         title,
         description,
         target: 1,
-        count: 2,
+        count: 1,
         gauge_colour,
         displaySubButton,
         displayFollowButton,
@@ -56,5 +56,41 @@ describe("CustomMetric.vue", () => {
     });
     expect(wrapper.find("gauge-stub").exists()).toBe(false);
     expect(wrapper.text()).toContain("Achievement Complete!");
+  });
+
+  it("does display subscriber button", () => {
+    const wrapper = shallowMount(CustomMetric, {
+      propsData: {
+        title,
+        description,
+        target: 10,
+        count: 5,
+        gauge_colour,
+        displaySubButton: true,
+        displayFollowButton,
+        buttonTxtColour,
+        buttonBkgColour,
+        channelName,
+      },
+    });
+    expect(wrapper.text()).toContain("Subscribe to Dummy Channel");
+  });
+
+  it("does not display subscriber button", () => {
+    const wrapper = shallowMount(CustomMetric, {
+      propsData: {
+        title,
+        description,
+        target: 10,
+        count: 5,
+        gauge_colour,
+        displaySubButton: false,
+        displayFollowButton,
+        buttonTxtColour,
+        buttonBkgColour,
+        channelName,
+      },
+    });
+    expect(wrapper.text()).not.toContain("Subscribe to Dummy Channel");
   });
 });
