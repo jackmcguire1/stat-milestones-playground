@@ -12,15 +12,6 @@ describe("CustomMetric.vue", () => {
   const channelName = "Dummy Channel";
 
   it("renders gauge when count is less than target", () => {
-    const title = "Dummy Title";
-    const description = "Dummy Description";
-    const gauge_colour = "#123456";
-    const displaySubButton = true;
-    const displayFollowButton = true;
-    const buttonTxtColour = "#abcdef";
-    const buttonBkgColour = "#fedcba";
-    const channelName = "Dummy Channel";
-
     const wrapper = shallowMount(CustomMetric, {
       propsData: {
         title,
