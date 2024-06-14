@@ -189,9 +189,6 @@
 import CustomMetric from "@/components/utils/CustomMetric.vue";
 import { ColorPicker } from "vue3-colorpicker";
 import "vue3-colorpicker/style.css";
-import { BToastOrchestrator } from "bootstrap-vue-next";
-
-const { show, remove } = BToastOrchestrator;
 
 export default {
   name: "panel",
