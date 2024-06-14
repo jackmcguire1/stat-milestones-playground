@@ -84,4 +84,35 @@ describe("CustomMetric.vue", () => {
     });
     expect(wrapper.text()).not.toContain("Subscribe to Dummy Channel");
   });
+
+  it("calls window.open when subscribe button is clicked", async () => {
+    const windowOpenSpy = jest
+      .spyOn(window, "open")
+      .mockImplementation(() => {});
+
+    const wrapper = shallowMount(CustomMetric, {
+      propsData: {
+        title,
+        description,
+        target: 10,
+        count: 5,
+        gauge_colour,
+        displaySubButton: true,
+        displayFollowButton,
+        buttonTxtColour,
+        buttonBkgColour,
+        channelName,
+      },
+    });
+
+    await wrapper.find("#subscribeBtn").trigger("click");
+
+    expect(windowOpenSpy).toHaveBeenCalled();
+    expect(windowOpenSpy).toHaveBeenCalledWith(
+      "https://subs.twitch.tv/" + channelName,
+      "_blank"
+    );
+
+    windowOpenSpy.mockRestore();
+  });
 });

@@ -44,7 +44,7 @@
           <BListGroupItem>
             <div>
               <BContainer class="text-center">
-                <BButton @click="subscribeToUser()"
+                <BButton id="subscribeBtn" @click="subscribeToUser()"
                   >Subscribe to {{ channelName }}</BButton
                 >
               </BContainer>
