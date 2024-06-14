@@ -218,7 +218,6 @@ export default {
   },
   methods: {
     notification: function (title, message, delay, append) {
-      console.log("HELLO");
       this.$refs.toastOrchestrator.show?.({
         props: {
           title: title,
