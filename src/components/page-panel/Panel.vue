@@ -161,6 +161,7 @@
                         variant="info"
                         >New Follower</BButton
                       >
+                      <div style="margin-right: 10px;"></div>
                       <BButton
                         @click="
                           notification(
