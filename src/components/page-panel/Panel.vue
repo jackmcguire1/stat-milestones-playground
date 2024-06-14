@@ -1,6 +1,7 @@
 <template>
   <div id="panel" :style="style">
-    <BToastOrchestrator />
+    <BToastOrchestrator ref="toastOrchestrator" />
+
     <div class="custom">
       <BNavbar toggleable="lg">
         <BNavbarBrand :style="{ color: appFontColour }">
@@ -68,43 +69,43 @@
 
                 <BListGroupItem>
                   <BInputGroup prepend="Metric Gauge Colour">
-                    <BInputGroupAppend id="colourPos">
+                    <template #append>
                       <color-picker
                         format="hex"
                         shape="square"
                         v-model:pureColor="gauge_colour"
                       />
-                    </BInputGroupAppend>
+                    </template>
                   </BInputGroup>
                 </BListGroupItem>
 
                 <BListGroupItem>
                   <BInputGroup prepend="Background Colour">
-                    <BInputGroupAppend id="colourPos">
+                    <template #append>
                       <color-picker
                         format="hex"
                         shape="square"
                         v-model:pureColor="backgroundColour"
                       />
-                    </BInputGroupAppend>
+                    </template>
                   </BInputGroup>
                 </BListGroupItem>
 
                 <BListGroupItem>
                   <BInputGroup prepend="Font Colour">
-                    <BInputGroupAppend id="colourPos">
+                    <template #append>
                       <color-picker
                         format="hex"
                         shape="square"
                         v-model:pureColor="appFontColour"
                       />
-                    </BInputGroupAppend>
+                    </template>
                   </BInputGroup>
                 </BListGroupItem>
 
                 <BListGroupItem>
                   <BInputGroup prepend="Display follower button">
-                    <BInputGroupAppend style="margin-left: 10px">
+                    <template #append>
                       <BFormRadioGroup
                         v-model="displayFollowButton"
                         size="sm"
@@ -119,13 +120,13 @@
                           {{ option.text }}
                         </BFormRadio>
                       </BFormRadioGroup>
-                    </BInputGroupAppend>
+                    </template>
                   </BInputGroup>
                 </BListGroupItem>
 
                 <BListGroupItem>
                   <BInputGroup prepend="Display Subscriber button">
-                    <BInputGroupAppend style="margin-left: 10px">
+                    <template #append>
                       <BFormRadioGroup
                         v-model="displaySubButton"
                         button-variant="outline-success"
@@ -141,13 +142,13 @@
                           {{ option.text }}
                         </BFormRadio>
                       </BFormRadioGroup>
-                    </BInputGroupAppend>
+                    </template>
                   </BInputGroup>
                 </BListGroupItem>
 
                 <BListGroupItem>
                   <BInputGroup prepend="Alerts">
-                    <BInputGroupAppend style="margin-left: 10px">
+                    <template #append>
                       <BButton
                         @click="
                           notification(
@@ -157,11 +158,9 @@
                             true
                           )
                         "
-                        variant="success"
+                        variant="info"
                         >New Follower</BButton
                       >
-                    </BInputGroupAppend>
-                    <BInputGroupAppend style="margin-left: 10px">
                       <BButton
                         @click="
                           notification(
@@ -171,10 +170,10 @@
                             true
                           )
                         "
-                        variant="success"
+                        variant="info"
                         >New Subscriber!</BButton
                       >
-                    </BInputGroupAppend>
+                    </template>
                   </BInputGroup>
                 </BListGroupItem>
               </BListGroup>
@@ -190,11 +189,15 @@
 import CustomMetric from "@/components/utils/CustomMetric.vue";
 import { ColorPicker } from "vue3-colorpicker";
 import "vue3-colorpicker/style.css";
+import { BToastOrchestrator } from "bootstrap-vue-next";
+
+const { show, remove } = BToastOrchestrator;
 
 export default {
   name: "panel",
   data() {
     return {
+      showToast: true,
       title: "Followers",
       description: "❤️ Thank you for following! ❤️",
       count: 50,
@@ -217,7 +220,21 @@ export default {
     locale: String,
   },
   methods: {
-    notification: function (title, message, delay, append) {},
+    notification: function (title, message, delay, append) {
+      console.log("HELLO");
+      this.$refs.toastOrchestrator.show?.({
+        props: {
+          title: title,
+          body: message,
+          value: delay,
+          interval: 100,
+          progressProps: {
+            variant: "danger",
+          },
+          pos: "top-center",
+        },
+      });
+    },
   },
   computed: {
     style() {
