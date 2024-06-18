@@ -198,7 +198,7 @@ export default {
       showToast: true,
       title: "Followers",
       description: "❤️ Thank you for following! ❤️",
-      count: 50,
+      count: 25,
       target: 100,
       gauge_colour: "#26a59a",
       displaySubButton: true,
