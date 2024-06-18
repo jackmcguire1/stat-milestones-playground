@@ -1,12 +1,13 @@
 <template>
   <div id="custommetric">
-    <BCard class="text-center">
+    <BCard id="title" class="text-center">
       <span class="text-center">
         <h3 style="color: black">{{ title }}</h3>
       </span>
       <div v-if="count < target">
         <br />
         <gauge
+          id="gauge-id"
           :title="title"
           :current="count"
           :target="target"
