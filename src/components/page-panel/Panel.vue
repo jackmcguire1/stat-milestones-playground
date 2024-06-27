@@ -153,7 +153,7 @@
                         @click="
                           notification(
                             'New Follower!',
-                            'crazyjack12 has followed example_user',
+                            'example_user has followed ' + this.channelName,
                             10000,
                             true
                           )
@@ -166,7 +166,7 @@
                         @click="
                           notification(
                             'New Subscriber!',
-                            'crazyjack12 has subscribed to example_user',
+                            'example_user has subscribed to ' + this.channelName,
                             10000,
                             true
                           )

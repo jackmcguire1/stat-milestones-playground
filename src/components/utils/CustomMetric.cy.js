@@ -13,7 +13,7 @@ describe("<CustomMetric />", () => {
   it("renders", () => {
     // see: https://on.cypress.io/mounting-vue
     cy.mount(CustomMetric, {
-      propsData: {
+      props: {
         title,
         description,
         target: 10,
@@ -32,7 +32,7 @@ describe("<CustomMetric />", () => {
 
   it("renders image and achievement text when count is equal or greater than target", () => {
     cy.mount(CustomMetric, {
-      propsData: {
+      props: {
         title,
         description,
         target: 1,
