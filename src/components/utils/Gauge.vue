@@ -1,7 +1,7 @@
 <template>
   <div id="gauge">
     <div class="image-detail">
-      <canvas :id="this._uid" class="image-detail-canvas"></canvas>
+      <canvas :id="this.$.uid" class="image-detail-canvas"></canvas>
     </div>
     <div id="inner">
       <span style="color: black">{{ title }}: </span>
@@ -23,8 +23,8 @@ export default {
     return {
       gauge: null,
       label: null,
-      gaugeValueID: "gval" + this._uid,
-      targetEL: "gval" + this._uid,
+      gaugeValueID: "gval" + this.$.uid,
+      targetEL: "gval" + this.$.uid,
     };
   },
   props: {
@@ -40,7 +40,7 @@ export default {
     initGauge: function (current, colour) {
       var opts = this.getOpts(colour);
 
-      var el = document.getElementById(this._uid); // your canvas element
+      var el = document.getElementById(this.$.uid); // your canvas element
       this.gauge = new gaugeJS.Donut(el).setOptions(opts); // create sexy gauge!
       this.gauge.maxValue = this.target; // set max gauge value
       this.gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
@@ -76,7 +76,7 @@ export default {
       this.gauge.set(current);
       this.gauge.setTextField(document.getElementById(this.gaugeValueID));
 
-      var target = document.getElementById(this._uid); // your canvas element
+      var target = document.getElementById(this.$.uid); // your canvas element
       target.title = this.title + ": " + current;
     },
     target: function (target) {

@@ -25,3 +25,9 @@ jobs:
 
       - name: Vite Build
         run: npm run build
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          component: true
+          browser: chrome
