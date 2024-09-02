@@ -3,7 +3,7 @@
 > This is a playground for the Twitch Extension stat-milestones
 
 <p align="center">
-    <img align="center" src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_thumbnail_photos/000/771/851/datas/medium.png"  title="Stat-milestones-vue">
+    <img align="center" src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/009/128/datas/original.png"  title="Stat-milestones-vue">
 </p>
 
 ## About
