@@ -41,7 +41,7 @@
     "node-sass": "^9.0.0",
     "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
-    "vite": "^5.2.1"
+    "vite": "^5.4.2"
   },
   "eslintConfig": {
     "root": true,
