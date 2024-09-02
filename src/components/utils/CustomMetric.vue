@@ -1,12 +1,13 @@
 <template>
   <div id="custommetric">
-    <b-card class="text-center">
+    <BCard id="title" class="text-center">
       <span class="text-center">
         <h3 style="color: black">{{ title }}</h3>
       </span>
       <div v-if="count < target">
         <br />
         <gauge
+          id="gauge-id"
           :title="title"
           :current="count"
           :target="target"
@@ -15,77 +16,77 @@
       </div>
       <div v-else>
         <br />
-        <b-img :src="image" height="250" width="500"></b-img>
-        <b-list-group flush>
-          <b-list-group-item>Achievement Complete!</b-list-group-item>
-          <b-list-group-item
+        <BContainer>
+        <BImg :src="image" width="340.12" height="150"></BImg>
+        </BContainer>
+        <BListGroup flush>
+          <BListGroupItem>Achievement Complete!</BListGroupItem>
+          <BListGroupItem
             ><strong style="color: black">Target:</strong>
             <div style="color: black">{{ target.toLocaleString() }}</div>
-          </b-list-group-item>
-          <b-list-group-item
+          </BListGroupItem>
+          <BListGroupItem
             ><strong style="color: black">Current:</strong>
             <div style="color: black">{{ count.toLocaleString() }}</div>
-          </b-list-group-item>
-        </b-list-group>
+          </BListGroupItem>
+        </BListGroup>
       </div>
 
-      <b-list-group flush>
+      <BListGroup flush>
         <div v-if="displayFollowButton">
-          <b-list-group-item>
-            <b-container class="text-center">
-              <b-button @click="followUser()"
-                >Follow {{ channelName }}
-              </b-button>
-            </b-container>
-          </b-list-group-item>
+          <BListGroupItem>
+            <BContainer class="text-center">
+              <BButton @click="followUser()">Follow {{ channelName }} </BButton>
+            </BContainer>
+          </BListGroupItem>
         </div>
 
         <div v-if="displaySubButton">
-          <b-list-group-item>
+          <BListGroupItem>
             <div>
-              <b-container class="text-center">
-                <b-button @click="subscribeToUser()"
-                  >Subscribe to {{ channelName }}</b-button
+              <BContainer class="text-center">
+                <BButton id="subscribeBtn" @click="subscribeToUser()"
+                  >Subscribe to {{ channelName }}</BButton
                 >
-              </b-container>
+              </BContainer>
             </div>
-          </b-list-group-item>
+          </BListGroupItem>
         </div>
-      </b-list-group>
+      </BListGroup>
 
-      <b-list-group-item>
-        <b-container class="text-center">
+      <BListGroupItem>
+        <BContainer class="text-center">
           <strong style="color: black">Featured Follower:</strong>
-        </b-container>
-        <b-container class="text-center">
-          <b-avatar
+        </BContainer>
+        <BContainer class="text-center">
+          <BAvatar
             class="mr-2"
             :src="profileUrl"
             variant="warning"
             size="3.5em"
           >
-          </b-avatar>
+          </BAvatar>
           <span style="color: black" class="mr-auto"
             ><strong>crazyjack12</strong></span
           >
-        </b-container>
-      </b-list-group-item>
+        </BContainer>
+      </BListGroupItem>
 
-      <b-list-group flush>
-        <b-list-group-item>
+      <BListGroup flush>
+        <BListGroupItem>
           <div :style="style">
-            <b-card align="center" id="customMetricCard" class="">
+            <BCard align="center" id="customMetricCard" class="">
               <template #header>
                 <span style="color: black">
                   Message To Followers:
                 </span></template
               >
-              <b-card-text style="color: black">{{ description }}</b-card-text>
-            </b-card>
+              <BCard-text style="color: black">{{ description }}</BCard-text>
+            </BCard>
           </div>
-        </b-list-group-item>
-      </b-list-group>
-    </b-card>
+        </BListGroupItem>
+      </BListGroup>
+    </BCard>
   </div>
 </template>
 
