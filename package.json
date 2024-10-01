@@ -17,7 +17,7 @@
     "@types/bootstrap": "^5.2.10",
     "@vue/babel-preset-app": "^5.0.8",
     "@vue/compat": "3.4.29",
-    "@vue/compiler-sfc": "3.4.38",
+    "@vue/compiler-sfc": "3.5.10",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "bootstrap-vue-next": "^0.22.0",
